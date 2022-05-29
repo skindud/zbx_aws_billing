@@ -9,7 +9,7 @@ echo "### $(date) $pid [info] start" >> $logfile
 t_res=$(aws cloudwatch get-metric-statistics --metric-name EstimatedCharges --namespace 'AWS/Billing' --start-time $(date "+%Y-%m-%dT%H:%M:%SZ" --date="-300 minutes") --end-time $(date "+%Y-%m-%dT%H:%M:%SZ") --statistics Maximum --period 60 --dimensions Name=Currency,Value=USD | jq ".Datapoints[].Maximum"|tail -1)
 if [ "$t_res" = "" ]
 then
-	echo "### ($date) $pid [error] get from AWS t_res=$t_res" >> $logfile
+	echo "### $(date) $pid [error] get from AWS t_res=$t_res" >> $logfile
 	t_res_date_str=$(tail -100 $progdir/aws.service.log|grep "^### aws.service.total.charges"|tail -1|awk {'print $3,$4,$5,$6,$7,$8'})
 	t_res_date=$(date -d "$t_res_date_str" +%s)
 	t_now_date_str=$(date)
