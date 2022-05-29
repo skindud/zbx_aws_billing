@@ -4,7 +4,7 @@ echo -n "{\"data\":[";
 
 counter=1
 
-for service in `aws cloudwatch list-metrics --namespace "AWS/Billing"|jq ".Metrics[].Dimensions[0].Value" |grep -v '"USD"'|sort|uniq`;
+for service in $(aws cloudwatch list-metrics --namespace "AWS/Billing"|jq ".Metrics[].Dimensions[0].Value" |grep -v '"USD"'|sort|uniq);
 do
 # echo "### service=$service";
  if [ "$counter" == "1" ];then
