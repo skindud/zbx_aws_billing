@@ -1,4 +1,13 @@
 # zbx_aws_billing
+
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+
+[![GitHub Super-Linter](https://github.com/skindud/useful/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
+
 Zabbix template and scripts for AWS billing monitoring
 
 ## Requirements
@@ -26,3 +35,16 @@ It have been tested on CentOS 7.
 ![alt text](figures/2-service.png) 
 ![alt text](figures/3-delta.png) 
 ![alt text](figures/4-delta.avg1d.png) 
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/skindud/zabbix-telegram-notification.svg?style=for-the-badge
+[contributors-url]: https://github.com/skindud/zabbix-telegram-notification/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/skindud/zabbix-telegram-notification.svg?style=for-the-badge
+[forks-url]: https://github.com/skindud/zabbix-telegram-notification/network/members
+[stars-shield]: https://img.shields.io/github/stars/skindud/zabbix-telegram-notification.svg?style=for-the-badge
+[stars-url]: https://github.com/skindud/zabbix-telegram-notification/stargazers
+[issues-shield]: https://img.shields.io/github/issues/skindud/zabbix-telegram-notification.svg?style=for-the-badge
+[issues-url]: https://github.com/skindud/zabbix-telegram-notification/issues
+[license-shield]: https://img.shields.io/github/license/skindud/zabbix-telegram-notification.svg?style=for-the-badge
+[license-url]: https://github.com/skindud/zabbix-telegram-notification/blob/master/LICENSE.txt
