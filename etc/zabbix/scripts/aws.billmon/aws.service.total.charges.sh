@@ -10,14 +10,14 @@ t_res=$(aws cloudwatch get-metric-statistics --metric-name EstimatedCharges --na
 if [ "$t_res" = "" ]
 then
 	echo "### $(date) $pid [error] get from AWS t_res=$t_res" >> $logfile
-	t_res_date_str=$(tail -100 $progdir/aws.service.log|grep "^### aws.service.total.charges"|tail -1|awk {'print $3,$4,$5,$6,$7,$8'})
+	t_res_date_str=$(tail -100 $progdir/aws.service.log|grep "^### aws.service.total.charges"|tail -1|awk '{print $3,$4,$5,$6,$7,$8}')
 	t_res_date=$(date -d "$t_res_date_str" +%s)
 	t_now_date_str=$(date)
 	t_now_date=$(date -d "$t_now_date_str" +%s)
 	let t_diff=$t_now_date-$t_res_date
 	if [ $t_diff -lt 43200 ]
 	then
-    	t_res=$(tail -100 $progdir/aws.service.log|grep "^### aws.service.total.charges"|tail -1|awk {'print $9'})
+    	t_res=$(tail -100 $progdir/aws.service.log|grep "^### aws.service.total.charges"|tail -1|awk '{print $9}')
 		echo "### $(date) $pid [info] ok cashed data t_res_date=$t_res_date t_now_date=$t_now_date t_diff=$t_diff" >> $logfile
     else
 		echo "### $(date) $pid [error] too old cashed data t_res_date=$t_res_date t_now_date=$t_now_date t_diff=$t_diff" >> $logfile
